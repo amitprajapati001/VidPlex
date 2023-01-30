@@ -1,7 +1,5 @@
 import Burger from "./Burger"
 import {Link} from "react-router-dom"
-import { getAuth, signOut } from "firebase/auth";
-import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 
