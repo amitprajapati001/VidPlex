@@ -45,4 +45,4 @@ export var burgerStyle = {
     },
   };
 
-export const DATA_API="AIzaSyCZFx77UHQ_AWiuRVTPZXVU6ZMmEOBpKDQ"
+export const DATA_API="AIzaSyClVNYU52l43I_iQnR8pTUWpP5qDf89cto"

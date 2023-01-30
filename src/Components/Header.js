@@ -1,6 +1,30 @@
 import Burger from "./Burger"
+import {Link} from "react-router-dom"
+import { getAuth, signOut } from "firebase/auth";
+import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
 
 const Header =()=>{
+
+const {user,logout} =UserAuth();
+console.log(user);
+
+
+const navigate=useNavigate();
+ async function signOut(){
+
+  try{
+    await logout();
+    navigate("/")
+  }
+  catch(e){
+    console.log(e);
+  }
+ }
+
+
+
     return (
         <div className="flex justify-between  bg-gray-700 p-[20px] items-center ">
           
@@ -11,8 +35,18 @@ const Header =()=>{
           </div> */}
 
         <div className="flex gap-[20px]">
-            <button className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Login</button>
-            <button className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">SignUp</button>
+
+            {(!user) && <Link to="/login" ><button className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Login</button></Link>}
+
+            {(!user)  &&  <Link to="/signup"><button className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">SignUp</button></Link>}
+
+            {(user) && <Link to="/signout"><button  className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" 
+            
+            onClick={()=>{
+              signOut();
+            }}>SignOut</button></Link>}
+
+            
         </div>
 
 
