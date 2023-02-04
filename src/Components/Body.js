@@ -31,7 +31,7 @@ const Body=()=>{
     useEffect(()=>{
         
     async function getVideos(){
-        const data= await fetch(`https://youtube-v31.p.rapidapi.com/search?q=aman&part=snippet%2Cid&regionCode=US&maxResults=50&order=date`,options)
+        const data= await fetch(`https://youtube-v31.p.rapidapi.com/search?q=trending&part=snippet%2Cid&regionCode=US&maxResults=50&order=date`,options)
         const json =await data.json();
         setVideos(json.items)
         setSearch("")
