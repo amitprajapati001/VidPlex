@@ -26,11 +26,12 @@ const Body=()=>{
     
     const [search, setSearch] =useState("")
     const [videos, setVideos]=useState([])
+    const [history, setHistory] = useState([])
 {
     useEffect(()=>{
         
     async function getVideos(){
-        const data= await fetch(`https://youtube-v31.p.rapidapi.com/search?q=songs&part=snippet%2Cid&regionCode=US&maxResults=50&order=date`,options)
+        const data= await fetch(`https://youtube-v31.p.rapidapi.com/search?q=aman&part=snippet%2Cid&regionCode=US&maxResults=50&order=date`,options)
         const json =await data.json();
         setVideos(json.items)
         setSearch("")
@@ -51,7 +52,7 @@ const Body=()=>{
         const json =await data.json();
         setVideos(json.items)
         setSearch("")
-        console.log(videos);
+        
         
     }
    
@@ -60,7 +61,7 @@ const Body=()=>{
         <>
         <div className="flex justify-center items-center p-[20px]  ">
 
-           <input type="text" value={search} onChange={(e)=>{
+           <input type="text" value={search} autocomplete="off" onChange={(e)=>{
             setSearch(e.target.value)
            }}  name="url" id="url" placeholder="Search Here" className="flex border rounded-tl-md  rounded-bl-md dark:text-gray-100 dark:bg-gray-800 focus:ring-violet-400 bg-gray-100 w-[300px] p-[10px]  text-[100%] outline-0  " /> 
            <button  onClick={()=>{

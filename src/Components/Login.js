@@ -10,8 +10,8 @@ const Login =()=>{
     const navigate =useNavigate()
 
     const [userInfo, setUserInfo]=useState({
-        email:"",
-        password:""
+        email:"amit@2.com",
+        password:"amit@2.com"
     })
 
     async function handleSubmit(){

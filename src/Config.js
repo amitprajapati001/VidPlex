@@ -45,4 +45,36 @@ export var burgerStyle = {
     },
   };
 
+ export function removeDuplicates(arr) {
+              
+    // Create an array of objects
+   
+      
+    // Display the list of array objects
+    console.log(arr);
+      
+    // Declare a new array
+    let newArray = [];
+      
+    // Declare an empty object
+    let uniqueObject = {};
+
+    for (let i in arr) {
+      
+        // Extract the title
+       let objTitle = arr[i]['id'];
+      
+        // Use the title as the index
+        uniqueObject[objTitle] = arr[i];
+    }
+      
+    // Loop to push unique object into array
+    for (let i in uniqueObject) {
+        newArray.push(uniqueObject[i]);
+    }
+      
+    // Display the unique objects
+    return newArray;
+}
+
 export const DATA_API="AIzaSyClVNYU52l43I_iQnR8pTUWpP5qDf89cto"
