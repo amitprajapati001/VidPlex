@@ -124,7 +124,7 @@ useEffect(()=>{
 
   return   (
     <div className='flex justify-start items-center flex-col   bg-black min-h-[100vh] '>
-    <ReactPlayer  playing={true} playIcon controls url={`https://www.youtube.com/watch?v=${id}`} width="100%"  />
+    <ReactPlayer  playing={true} playIcon controls url={`https://www.youtube.com/watch?v=${id}`} width="100%" />
     <h1 className='text-2xl font-bold mt-[20px] text-center text-white'>{videoData[0]?.snippet?.title}</h1>
     <div className='flex gap-[40px] mt-[40px]'>
 

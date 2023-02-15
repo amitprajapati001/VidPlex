@@ -7,7 +7,7 @@ const Videocard =({item})=>{
     return(
         <div className="flex items-baseline flex-col m-[0px] justify-evenly md:ml-[40px] "> 
              <img alt="img" src={item?.snippet?.thumbnails?.high?.url} className="md:h-[200px] w-[100%] mt-[20px] justify-center items-center md:ml-[17px]  object-cover rounded" />
-             <h1 className="flex overflow-hidden text-lg w-[250px] truncate font-bold mt-[5px]">{item?.snippet?.title}</h1>
+             <h1 className="flex overflow-hidden text-lg md:w-[350px]  font-bold mt-[5px]">{item?.snippet?.title}</h1>
         </div>
     )
 }
@@ -31,7 +31,7 @@ const Body=()=>{
     useEffect(()=>{
         
     async function getVideos(){
-        const data= await fetch(`https://youtube-v31.p.rapidapi.com/search?q=trending&part=snippet%2Cid&regionCode=US&maxResults=50&order=date`,options)
+        const data= await fetch(`https://youtube-v31.p.rapidapi.com/search?q=tech&part=snippet%2Cid&regionCode=US&maxResults=50&order=date`,options)
         const json =await data.json();
         setVideos(json.items)
         setSearch("")
